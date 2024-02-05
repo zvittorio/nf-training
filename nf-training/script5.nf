@@ -33,8 +33,11 @@ process INDEX {
 }
 
 process QUANTIFICATION {
-    tag "Salmon on $sample_id"
-    publishDir params.outdir, mode:'copy'
+    tag "Salmon on $sample_id" //this is a directive: a tag for readability of the process names
+    // otherwise nextflow only prints the first x characters of the process names
+    publishDir params.outdir, mode:'copy' // this is the directory where you want to
+    // publish your results
+    // by default this is the value passed to params.outdir
 
     input:
     path salmon_index

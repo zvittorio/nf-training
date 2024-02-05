@@ -1,7 +1,8 @@
 #!/usr/bin/env nextflow
 
-params.greeting = 'Hello world!'
-greeting_ch = Channel.of(params.greeting)
+params.greeting = 'Bonjour le monde!'
+params.greeting2 = 'Hola mundo!'
+greeting_ch = Channel.of(params.greeting, params.greeting2)
 
 process SPLITLETTERS {
     input:
@@ -23,7 +24,8 @@ process CONVERTTOUPPER {
     stdout
 
     """
-    cat $y | tr '[a-z]' '[A-Z]' 
+    #cat $y | tr '[a-z]' '[A-Z]' 
+    rev $y | sed 's/B/3/g'
     """
 }
 

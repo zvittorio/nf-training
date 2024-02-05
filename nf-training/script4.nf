@@ -35,7 +35,8 @@ process INDEX {
 process QUANTIFICATION {
     input:
     path salmon_index
-    tuple val(sample_id), path(reads)
+    tuple val(sample_id), path(reads) //this goes to the channel factory in the workflow section
+    // it gets the path from the reads params and extrapolates the sample_id
 
     output:
     path "$sample_id"

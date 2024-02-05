@@ -16,3 +16,10 @@ log.info """\
     .stripIndent()
 
 read_pairs_ch = Channel.fromFilePairs(params.reads)
+read_pairs_ch.view()
+// in this case view will print a tuple:
+// [metadata, [file_1, file_2]]
+
+// .set operator can also be used to create a channel
+Channel.fromFilePairs(params.reads, checkIfExists: true).set()
+
