@@ -1,2 +1,5 @@
-ch = Channel.of("1","2","3")
-ch.view() 
+params.foo = 'Hello'
+params.bar = 'world!'
+
+// print both params
+println "$params.foo $params.bar"

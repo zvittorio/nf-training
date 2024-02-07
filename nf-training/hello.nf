@@ -1,8 +1,8 @@
 #!/usr/bin/env nextflow
 
-params.greeting = 'Bonjour le monde!'
-params.greeting2 = 'Hola mundo!'
-greeting_ch = Channel.of(params.greeting, params.greeting2)
+params.greeting = 'Buongiorno!'
+greeting2 = 'Hola mundo!'
+greeting_ch = Channel.of(params.greeting, greeting2)
 
 process SPLITLETTERS {
     input:
